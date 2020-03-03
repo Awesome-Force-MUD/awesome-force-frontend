@@ -1,16 +1,20 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { connect } from 'react-redux'
 
 import { initialize } from '../actions'
 
 const MainDash = props => {
+    useEffect(() => {
+        props.initialize()
+    }, [])
+
     return(
     <div>Welcome, {props.name}</div>
     )
 }
 
-const mapStateToProps = () => {
+const mapStateToProps = state => {
     return {
         uuid: state.uuid,
         name: state.name,
@@ -21,4 +25,4 @@ const mapStateToProps = () => {
     }
 }
 
-export default connect(mapStateToProps, {})(MainDash)
+export default connect(mapStateToProps, { initialize })(MainDash)

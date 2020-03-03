@@ -11,7 +11,6 @@ import PrivateRoute from './components/utils/PrivateRoute'
 
 import styled from 'styled-components'
 
-import './App.css';
 
 function App() {
   return (

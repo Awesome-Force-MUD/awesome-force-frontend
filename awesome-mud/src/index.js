@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import * as reset from './styles/reset.css';
+import * as global from './styles/global.css';
 
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware, compose } from 'redux'
@@ -19,7 +21,7 @@ const store = createStore(
 const rootElement = document.getElementById('root');
 ReactDOM.render(
 <Provider store={store}>
-    <App />
+  <App />
 </Provider>, rootElement);
 
 

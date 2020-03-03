@@ -2,11 +2,11 @@ import React from 'react';
 
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
-import Header from './components/Header'
-import Login from './components/Login'
-import Register from './components/Register'
-import MainDash from './components/MainDash'
-import SplashPage from './components/SplashPage'
+import Header from './components/navbar/Header'
+import Login from './views/Login'
+import Register from './views/Register'
+import MainDash from './views/MainDash'
+import SplashPage from './views/SplashPage'
 
 import PrivateRoute from './components/PrivateRoute'
 

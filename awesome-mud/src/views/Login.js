@@ -3,6 +3,7 @@ import {axiosWithAuth} from '../utils/axiosWithAuth'
 import axios from 'axios'
 import { useHistory } from 'react-router-dom'
 import styled from "styled-components"
+import { FormContainer, FormLabel, FormInput, FormButton } from "./Register"
 
 const Login = props => {
     const history = useHistory()
@@ -28,42 +29,45 @@ const Login = props => {
     }
 
     return (
-        <LoginForm>
-            <h2>Log In</h2>
-            <form onSubmit={handleSubmit}>
-                <label>
+        <LoginContainer>
+            <h2>LOG IN</h2>
+            <FormContainer onSubmit={handleSubmit}>
+                <FormLabel>
                     Username:
-                    <input
+                    <FormInput
                     type="text"
                     name="username"
                     value={credentials.username}
                     onChange={handleChange}
                     />
-                </label>
-                <label>
+                </FormLabel>
+                <FormLabel>
                     Password:
-                    <input
+                    <FormInput
                     type="password"
                     name="password"
                     value={credentials.password}
                     onChange={handleChange}
                     />
-                </label>
-                <button>Log In</button>
-            </form>
-        </LoginForm>
+                </FormLabel>
+                <FormButton>LOG IN</FormButton>
+            </FormContainer>
+        </LoginContainer>
     )
 
 }
 
 export default Login
 
-const LoginForm = styled.div`
-    width: 500px;
-    height: 500px;
-    position: absolute;
-    top: calc(50vh - 200px);
-    left: calc(50vw - 200px);
-    overflow: hidden;
+const LoginContainer = styled.div`
+display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-top: 10rem;
     color: white;
+
+    h2 {
+        font-size: 2rem;
+        padding-bottom: 2rem;
+    }
 `

@@ -30,36 +30,36 @@ const Register = props => {
     return (
         <RegisterContainer>
             <h2>REGISTER</h2>
-            <form onSubmit={handleSubmit}>
-                <label>
+            <FormContainer onSubmit={handleSubmit}>
+                <FormLabel>
                     Username:
-                    <input
+                    <FormInput
                     type="text"
                     name="username"
                     value={credentials.username}
                     onChange={handleChange}
                     />
-                </label>
-                <label>
+                </FormLabel>
+                <FormLabel>
                     Password:
-                    <input
+                    <FormInput
                     type="password"
                     name="password1"
                     value={credentials.password1}
                     onChange={handleChange}
                     />
-                </label>
-                <label>
+                </FormLabel>
+                <FormLabel>
                     Repeat Password:
-                    <input
+                    <FormInput
                     type="password"
                     name="password2"
                     value={credentials.password2}
                     onChange={handleChange}
                     />
-                </label>
-                <button>REGISTER</button>
-            </form>
+                </FormLabel>
+                <FormButton>REGISTER</FormButton>
+            </FormContainer>
         </RegisterContainer>
     )
 
@@ -67,7 +67,7 @@ const Register = props => {
 
 export default Register
 
-const RegisterContainer = styled.form`
+const RegisterContainer = styled.div`
     display: flex;
     flex-direction: column;
     margin: 0 auto;
@@ -78,23 +78,24 @@ const RegisterContainer = styled.form`
         font-size: 2rem;
         padding-bottom: 2rem;
     }
-    form {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-    }
-    label {
-        font-size: 1.6rem;
-        margin: 1.4rem 0;
-    }
-    input {
-        font-size: 1.6rem;
-        padding: .4rem;
-    }
-    button {
-        background-color: #555;
-        padding: 1rem;
-        font-size: 1.6rem;
-        font-family: "Chakra Petch";
-    }
+`
+export const FormContainer = styled.form`
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+`
+export const FormLabel = styled.label`
+    font-size: 1.6rem;
+    margin: 1.4rem 0;
+`
+export const FormInput = styled.input`
+    font-size: 1.6rem;
+    padding: .4rem;
+    margin-left: 1rem;
+`
+export const FormButton = styled.button`
+    background-color: #555;
+    padding: 1rem;
+    font-size: 1.6rem;
+    font-family: "Chakra Petch";
 `

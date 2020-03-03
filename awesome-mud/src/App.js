@@ -6,6 +6,7 @@ import Header from './components/Header'
 import Login from './components/Login'
 import Register from './components/Register'
 import MainDash from './components/MainDash'
+import SplashPage from './components/SplashPage'
 
 import PrivateRoute from './components/PrivateRoute'
 
@@ -16,9 +17,10 @@ function App() {
     <Router>
       <div className="App">
         <Header />
+        <Route exact path="/" component={SplashPage} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
-        {/* <PrivateRoute path="/" component={MainDash} /> */}
+        <PrivateRoute path="/game" component={MainDash} />
       </div>
     </Router>
   );

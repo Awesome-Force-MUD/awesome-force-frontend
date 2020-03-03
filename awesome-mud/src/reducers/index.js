@@ -1,4 +1,11 @@
+import{ INITIALIZED, ERROR_RECEIVED } from '../actions'
+
 const initialState = {
+    uuid: '',
+    name: '',
+    current_room: '',
+    current_desc: '',
+    players: [],
     error: ''
 }
 

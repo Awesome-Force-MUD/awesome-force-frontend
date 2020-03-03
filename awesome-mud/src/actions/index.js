@@ -17,7 +17,7 @@ export const initialize = () => dispatch => {
         })
 }
 
-export const move_room = (dir) => {
+export const move_room = dir => dispatch => {
     axiosWithAuth()
         .post("/api/adv/move/", `direction: ${dir}`)
         .then(res => {
@@ -26,6 +26,6 @@ export const move_room = (dir) => {
         })
         .catch(err => {
             console.log(err)
-            dispatch({ type: MOVED_ROOM, payload: err})
+            dispatch({ type: ERROR_RECEIVED, payload: err})
         })
 }

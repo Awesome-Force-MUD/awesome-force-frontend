@@ -1,11 +1,11 @@
 import React from 'react'
 
-const SplashPage = () => {
+const About = () => {
     return(
-        <div className="splash-page">
+        <div className="about-page">
             <h1>Welcome to Awesome MUD</h1>
         </div>
     )
 }
 
-export default SplashPage
+export default About

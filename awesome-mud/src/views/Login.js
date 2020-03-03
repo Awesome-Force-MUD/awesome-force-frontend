@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import {axiosWithAuth} from '../utils/axiosWithAuth'
 import axios from 'axios'
 import { useHistory } from 'react-router-dom'
+import styled from "styled-components"
 
 const Login = props => {
     const history = useHistory()
@@ -27,7 +28,7 @@ const Login = props => {
     }
 
     return (
-        <div className="login-form">
+        <LoginForm>
             <h2>Log In</h2>
             <form onSubmit={handleSubmit}>
                 <label>
@@ -50,9 +51,19 @@ const Login = props => {
                 </label>
                 <button>Log In</button>
             </form>
-        </div>
+        </LoginForm>
     )
 
 }
 
 export default Login
+
+const LoginForm = styled.div`
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    top: calc(50vh - 200px);
+    left: calc(50vw - 200px);
+    overflow: hidden;
+    color: white;
+`

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import {axiosWithAuth} from '../utils/axiosWithAuth'
 import axios from 'axios'
 import { useHistory } from 'react-router-dom'
+import styled from "styled-components"
 
 const Register = props => {
     const history = useHistory()
@@ -27,8 +28,8 @@ const Register = props => {
     }
 
     return (
-        <div className="login-form">
-            <h2>Log In</h2>
+        <RegisterContainer>
+            <h2>REGISTER</h2>
             <form onSubmit={handleSubmit}>
                 <label>
                     Username:
@@ -57,11 +58,43 @@ const Register = props => {
                     onChange={handleChange}
                     />
                 </label>
-                <button>Log In</button>
+                <button>REGISTER</button>
             </form>
-        </div>
+        </RegisterContainer>
     )
 
 }
 
 export default Register
+
+const RegisterContainer = styled.form`
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-top: 10rem;
+    color: white;
+
+    h2 {
+        font-size: 2rem;
+        padding-bottom: 2rem;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    label {
+        font-size: 1.6rem;
+        margin: 1.4rem 0;
+    }
+    input {
+        font-size: 1.6rem;
+        padding: .4rem;
+    }
+    button {
+        background-color: #555;
+        padding: 1rem;
+        font-size: 1.6rem;
+        font-family: "Chakra Petch";
+    }
+`

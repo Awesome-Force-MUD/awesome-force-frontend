@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Chakra+Petch&display=swap');
+
 * {
   box-sizing: border-box;
 }
 
-html{
+html {
   font-size: 62.5%
 }
 
@@ -13,6 +15,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: "Chakra Petch", Arial, Helvetica, sans-serif;
 }
 
 .App {

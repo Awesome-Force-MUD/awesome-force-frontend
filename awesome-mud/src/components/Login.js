@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import {axiosWithAuth} from '../utils/axiosWithAuth'
+import axios from 'axios'
 
 const Login = props => {
     const [credentials, setCredentials] = useState({
@@ -13,10 +14,10 @@ const Login = props => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        axiosWithAuth()
-            .post("/api/login/", credentials)
+        axios.post("https://lambda-mud-test.herokuapp.com/api/login/", credentials)
             .then(res => {
-                localStorage.setItem("token". res.data.key)
+                console.log(res)
+                localStorage.setItem("token", res.data.key)
             })
 
     }

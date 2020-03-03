@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import {axiosWithAuth} from '../utils/axiosWithAuth'
+import axios from 'axios'
 
-const Login = props => {
+const Register = props => {
     const [credentials, setCredentials] = useState({
         username: "",
-        password: "",
+        password1: "",
         password2: ""
     })
 
@@ -14,10 +15,9 @@ const Login = props => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        axiosWithAuth()
-            .post("/api/registration/", credentials)
+        axios.post("https://lambda-mud-test.herokuapp.com/api/registration/", credentials)
             .then(res => {
-                localStorage.setItem("token". res.data.key)
+                localStorage.setItem("token", res.key)
             })
 
     }
@@ -39,8 +39,8 @@ const Login = props => {
                     Password:
                     <input
                     type="password"
-                    name="password"
-                    value={credentials.password}
+                    name="password1"
+                    value={credentials.password1}
                     onChange={handleChange}
                     />
                 </label>
@@ -60,4 +60,4 @@ const Login = props => {
 
 }
 
-export default Login
+export default Register

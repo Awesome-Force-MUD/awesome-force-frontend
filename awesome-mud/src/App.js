@@ -17,7 +17,7 @@ function App() {
     <Router>
       <div className="App">
         <Header />
-        <Route exact path="/" component={SplashPage} />
+        <Route exact path="/" component={About} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
         <PrivateRoute path="/game" component={MainDash} />

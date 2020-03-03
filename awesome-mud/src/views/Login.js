@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 import {axiosWithAuth} from '../utils/axiosWithAuth'
 import axios from 'axios'
+import { useHistory } from 'react-router-dom'
 
 const Login = props => {
+    const history = useHistory()
+
     const [credentials, setCredentials] = useState({
         username: "",
         password: ""
@@ -18,6 +21,7 @@ const Login = props => {
             .then(res => {
                 console.log(res)
                 localStorage.setItem("token", res.data.key)
+                history.push("/game")
             })
 
     }

@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
-
 import { connect } from 'react-redux'
-
 import { initialize } from '../actions'
+
+import Description from './Description'
+import MoveButtons from './MoveButtons'
 
 const MainDash = props => {
     useEffect(() => {
@@ -10,7 +11,12 @@ const MainDash = props => {
     }, [])
 
     return(
-    <div>Welcome, {props.name}</div>
+    <div className="main-dashboard">
+        <h4>Welcome, {props.name}</h4>
+        <Description />
+        <MoveButtons />
+        
+    </div>
     )
 }
 
@@ -18,8 +24,8 @@ const mapStateToProps = state => {
     return {
         uuid: state.uuid,
         name: state.name,
-        current_room: state.current_room,
-        current_desc: state.current_desc,
+        room_title: state.room_title,
+        room_desc: state.room_desc,
         players: state.players,
         error: state.error
     }

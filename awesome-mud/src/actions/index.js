@@ -19,7 +19,7 @@ export const initialize = () => dispatch => {
 
 export const move_room = dir => dispatch => {
     axiosWithAuth()
-        .post("/api/adv/move/", `direction: ${dir}`)
+        .post("/api/adv/move/", {"direction": dir})
         .then(res => {
             console.log(res)
             dispatch({ type: MOVED_ROOM, payload: res.data })

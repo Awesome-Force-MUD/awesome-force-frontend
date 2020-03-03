@@ -28,10 +28,12 @@ const reducer = (state = initialState, action) => {
         case MOVED_ROOM:
             return {
                 ...state,
+                error: action.payload.error_msg,
                 room_title: action.payload.title,
                 room_desc: action.payload.description,
                 players: action.payload.players
             }
+            
 
         default:
             return state;

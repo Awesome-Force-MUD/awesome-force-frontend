@@ -13,7 +13,7 @@ const MainDash = props => {
     return(
     <div className="main-dashboard">
         <h4>Welcome, {props.name}</h4>
-        <Description room_title={props.room_title} room_desc={props.room_desc} />
+        <Description />
         <MoveButtons />
         
     </div>

@@ -1,6 +1,10 @@
 import React from 'react'
+import { connect } from 'react-redux'
+
 import controls from "../game/assets/Window.png"
 import styled from "styled-components"
+
+import { move_room } from "../../actions"
 
 const Controls = props => {
     return(
@@ -10,7 +14,17 @@ const Controls = props => {
     )
 }
 
-export default Controls
+const mapStateToProps = state => {
+    return {
+        // uuid: state.uuid,
+        // name: state.name,
+        room_title: state.room_title,
+        room_desc: state.room_desc,
+        // players: state.players,
+        // error: state.error
+    }
+}
+export default connect(mapStateToProps, { move_room })(Controls)
 
 
 const ControlsContainer = styled.div`
@@ -18,6 +32,5 @@ const ControlsContainer = styled.div`
     justify-content: center;
     align-items: center;
     font-size: 2rem;
-    padding: 1rem;
-    background: #333;
+    padding: 2rem;
 `

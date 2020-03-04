@@ -7,12 +7,10 @@ import About from './views/About'
 import Login from './views/Login'
 import Register from './views/Register'
 import Character from './views/Character'
-import MainDash from './views/MainDash'
+import Game from './views/Game'
 
 import PrivateRoute from './components/utils/PrivateRoute'
-
 import styled from 'styled-components'
-
 
 function App() {
   return (
@@ -20,11 +18,11 @@ function App() {
       <AppContainer>
         <Header />
         <Route exact path="/" component={SplashPage} />
-        <Route path="/login" component={Login} />
         <Route path="/about" component={About} />
+        <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
         <PrivateRoute path="/character" component={Character} />
-        <PrivateRoute path="/game" component={MainDash} />
+        <PrivateRoute path="/game" component={Game} />
       </AppContainer>
     </Router>
   );
@@ -34,7 +32,7 @@ export default App;
 
 const AppContainer = styled.div`
   text-align: center;
-  max-width: 800px;
   margin: auto;
   background-color: #111;
+  color: #DDD;
 `

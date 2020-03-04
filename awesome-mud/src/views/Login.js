@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import {axiosWithAuth} from '../utils/axiosWithAuth'
 import axios from 'axios'
 import { useHistory } from 'react-router-dom'
+import styled from "styled-components"
+import { FormContainer, FormLabel, FormInput, FormButton } from "./Register"
 
 const Login = props => {
     const history = useHistory()
@@ -21,38 +23,51 @@ const Login = props => {
             .then(res => {
                 console.log(res)
                 localStorage.setItem("token", res.data.key)
-                history.push("/game")
+                history.push("/character")
             })
 
     }
 
     return (
-        <div className="login-form">
-            <h2>Log In</h2>
-            <form onSubmit={handleSubmit}>
-                <label>
+        <LoginContainer>
+            <h2>LOG IN</h2>
+            <FormContainer onSubmit={handleSubmit}>
+                <FormLabel>
                     Username:
-                    <input
+                    <FormInput
                     type="text"
                     name="username"
                     value={credentials.username}
                     onChange={handleChange}
                     />
-                </label>
-                <label>
+                </FormLabel>
+                <FormLabel>
                     Password:
-                    <input
+                    <FormInput
                     type="password"
                     name="password"
                     value={credentials.password}
                     onChange={handleChange}
                     />
-                </label>
-                <button>Log In</button>
-            </form>
-        </div>
+                </FormLabel>
+                <FormButton>LOG IN</FormButton>
+            </FormContainer>
+        </LoginContainer>
     )
 
 }
 
 export default Login
+
+const LoginContainer = styled.div`
+display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-top: 10rem;
+    color: white;
+
+    h2 {
+        font-size: 2rem;
+        padding-bottom: 2rem;
+    }
+`

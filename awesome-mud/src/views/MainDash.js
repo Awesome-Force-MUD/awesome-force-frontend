@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import { initialize } from '../actions'
 
-import Description from './Description'
-import MoveButtons from './MoveButtons'
+import Description from '../components/map/Descriptions'
+import MoveButtons from '../components/map/MoveButtons'
 
 const MainDash = props => {
     useEffect(() => {
@@ -15,7 +15,6 @@ const MainDash = props => {
         <h4>Welcome, {props.name}</h4>
         <Description />
         <MoveButtons />
-        
     </div>
     )
 }

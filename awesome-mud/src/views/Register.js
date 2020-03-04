@@ -22,7 +22,7 @@ const Register = props => {
         axios.post("https://lambda-mud-test.herokuapp.com/api/registration/", credentials)
             .then(res => {
                 localStorage.setItem("token", res.key)
-                history.push("/character")
+                history.push("/game")
             })
 
     }

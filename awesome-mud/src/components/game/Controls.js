@@ -46,7 +46,6 @@ const ControlsContainer = styled.div`
     padding: 2rem;
 `
 const NorthButton = styled.button`
-    margin: .5rem 0;
     padding: .6rem 1rem;
     color: #DDD;
     background: #222;
@@ -85,7 +84,6 @@ const EastButton = styled.button`
     }
 `
 const SouthButton = styled.button`
-    margin: .5rem 0;
     padding: .6rem 1rem;
     color: #DDD;
     background: #222;

@@ -21,9 +21,9 @@ const Login = props => {
         e.preventDefault();
         axios.post("https://lambda-mud-test.herokuapp.com/api/login/", credentials)
             .then(res => {
-                console.log(res)
+                console.log('submit response', res)
                 localStorage.setItem("token", res.data.key)
-                history.push("/character")
+                history.push("/game")
             })
 
     }

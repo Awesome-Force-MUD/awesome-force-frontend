@@ -26,8 +26,8 @@ const SplashContainer = styled.div`
     padding-top: 10rem;
     color: white;
     background: url(${space});
-    min-height: calc(100vh - 130px);
-    width: 100%;
+    min-height: 100vh;
+    width: 100vw;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

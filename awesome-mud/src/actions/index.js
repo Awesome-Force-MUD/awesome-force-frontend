@@ -1,6 +1,7 @@
 import { axiosWithAuth } from '../utils/axiosWithAuth'
     
-export const INITIALIZED = 'INITIALIZED'
+export const PLAYER_INITIALIZED = 'PLAYER_INITIALIZED'
+export const ROOMS_INITIALIZED = 'ROOMS_INITIALIZED'
 export const ERROR_RECEIVED = 'ERROR_RECEIVED'
 export const MOVED_ROOM = 'MOVED_ROOM'
 
@@ -9,7 +10,17 @@ export const initialize = () => dispatch => {
         .get("/api/adv/init/")
         .then(res => {
             console.log(res)
-            dispatch({ type: INITIALIZED, payload: res.data })
+            dispatch({ type: PLAYER_INITIALIZED, payload: res.data })
+        })
+        .catch(err => {
+            console.log(err)
+            dispatch({ type: ERROR_RECEIVED, payload: err})
+        })
+    axiosWithAuth()
+        .get("/api/adv/rooms/")
+        .then(res => {
+            console.log(res)
+            dispatch({ type: ROOMS_INITIALIZED, payload: res.data })
         })
         .catch(err => {
             console.log(err)

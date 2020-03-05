@@ -4,12 +4,11 @@ import { initialize } from '../actions'
 
 import Description from '../components/game/Descriptions'
 import Controls from '../components/game/Controls'
-
+import Player from '../components/player/Player'
 import styled from "styled-components"
 
 const Game = props => {
-    console.log('game props:', props)
-    console.log('game props.name:', props.name)
+    // console.log('game props:', props)
 
     useEffect(() => {
         props.initialize()
@@ -17,7 +16,9 @@ const Game = props => {
 
     return(
     <GameContainer>
-        <Board>TEST</Board>
+        <Board>
+            <Player />
+        </Board>
         <Sidebar>
             <Description />
             <Controls />
@@ -41,16 +42,18 @@ export default connect(mapStateToProps, { initialize })(Game)
 
 const GameContainer = styled.div`
     display: flex;
-    margin-top: 10rem;
-    width: 100%;
-    border: 3px solid red;
-    color: white;
-    font-size:
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 10rem 4rem;
+    // width: 1000px;
+    border: 3px solid #999;
 `
 const Board = styled.div`
     height: 400px;
-    width: 500px;
+    width: 600px;
     border: 2px solid #555;
+    margin: 3rem;
 `
 const Sidebar = styled.div`
     display: flex;

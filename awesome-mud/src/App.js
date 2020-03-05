@@ -9,7 +9,7 @@ import Register from './views/Register'
 import Character from './views/Character'
 import Game from './views/Game'
 
-import PrivateRoute from './components/utils/PrivateRoute'
+import PrivateRoute from './utils/PrivateRoute'
 import styled from 'styled-components'
 
 function App() {

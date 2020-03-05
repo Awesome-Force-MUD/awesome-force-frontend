@@ -1,16 +1,29 @@
 import React from 'react'
 
+import styled from "styled-components"
+
 const About = () => {
     return(
-        <div className="about-page">
+        <AboutContainer>
             <h1>About the Awesome MUD Team</h1>
-            <div>Developer1</div>
-            <div>Developer2</div>
-            <div>Developer3</div>
-            <div>Developer4</div>
-            <div>Developer5</div>
-        </div>
+            <h2>Developer1</h2>
+            <h2>Developer2</h2>
+            <h2>Developer3</h2>
+            <h2>Developer4</h2>
+            <h2>Developer5</h2>
+        </AboutContainer>
     )
 }
 
 export default About
+
+const AboutContainer = styled.div`
+    margin-top: 10rem;
+    h1 {
+        font-size: 3rem;
+    }
+    h2 {
+        margin-top: 1rem;
+        font-size: 2rem;
+    }
+`

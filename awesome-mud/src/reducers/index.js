@@ -1,4 +1,4 @@
-import{ INITIALIZED, ERROR_RECEIVED, MOVED_ROOM } from '../actions'
+import{ PLAYER_INITIALIZED, ROOMS_INITIALIZED, ERROR_RECEIVED, MOVED_ROOM } from '../actions'
 
 const initialState = {
     uuid: '',
@@ -6,7 +6,8 @@ const initialState = {
     room_title: '',
     room_desc: '',
     players: [],
-    error: ''
+    error: '',
+    rooms: []
 }
 
 const reducer = (state = initialState, action) => {
@@ -16,14 +17,20 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 error: action.payload.response
             }
-        case INITIALIZED:
+        case PLAYER_INITIALIZED:
             return {
+                ...state,
                 error: false,
                 uuid: action.payload.uuid,
                 name: action.payload.name,
                 room_title: action.payload.title,
                 room_desc: action.payload.description,
                 players: action.payload.players
+            }
+        case ROOMS_INITIALIZED:
+            return {
+                ...state,
+                rooms: action.payload
             }
         case MOVED_ROOM:
             return {

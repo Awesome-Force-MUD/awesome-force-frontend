@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { move_room } from '../actions'
+import { move_room } from '../../actions'
 
 const MoveButtons = props => {
 

@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import { initialize } from '../actions'
 
+import Map from '../components/game/Map'
 import Description from '../components/game/Descriptions'
 import Controls from '../components/game/Controls'
-import Player from '../components/player/Player'
 import styled from "styled-components"
 
 const Game = props => {
@@ -16,9 +16,7 @@ const Game = props => {
 
     return(
     <GameContainer>
-        <Board>
-            <Player />
-        </Board>
+        <Map />
         <Sidebar>
             <Description />
             <Controls />
@@ -45,15 +43,8 @@ const GameContainer = styled.div`
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    margin: 10rem 4rem;
-    // width: 1000px;
+    margin: 10rem 4rem 0 4rem;
     border: 3px solid #999;
-`
-const Board = styled.div`
-    height: 400px;
-    width: 600px;
-    border: 2px solid #555;
-    margin: 3rem;
 `
 const Sidebar = styled.div`
     display: flex;

@@ -9,7 +9,7 @@ const Controls = props => {
     
     const handleMove = e => {
         e.preventDefault()
-        props.move_room(e.target.name)
+        props.move_room(e.target.name, props.current_room)
     }
     
     return (
@@ -30,6 +30,7 @@ const mapStateToProps = state => {
         // name: state.name,
         room_title: state.room_title,
         room_desc: state.room_desc,
+        current_room: state.current_room
         // players: state.players,
         // error: state.error
     }

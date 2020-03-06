@@ -1,12 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { move_room } from '../actions'
+import { move_room } from '../../actions'
 
 const MoveButtons = props => {
 
     const handleMove = e => {
         e.preventDefault()
-        props.move_room(e.target.name)
+        props.move_room(e.target.name, current_room)
     }
 
     return (
@@ -25,7 +25,9 @@ const MoveButtons = props => {
 }
 
 const mapStateToProps = () => {
-    return{}
+    return{
+        current_room: state.current_room
+    }
 }
 
 export default connect(mapStateToProps, { move_room })(MoveButtons)

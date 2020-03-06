@@ -12,8 +12,7 @@ import data from "../../data/thunderball"
 function Map(props) {
     console.log('MAP props:', props)
     
-    const [map, setMap] = useState(data)
-    const [player, setPlayer] = useState({ x_coord:30, y_coord: 20})
+    
 
     let sprite
 
@@ -29,8 +28,10 @@ function Map(props) {
         p5.fill(125, 195, 125)
     }
 
+    
+
     let draw = p5 => {
-        map.forEach(room => {
+        props.rooms.forEach(room => {
             // console.log('room coords:', room)
 
             p5.square(room.x_coord * 60 + 15, 600 - room.y_coord * 60 - 45, 30)
@@ -42,7 +43,7 @@ function Map(props) {
                 p5.rect(room.x_coord * 60 + 30, 600 - room.y_coord * 60 - 45, 50, 30)
             }
         })
-        // p5.image(sprite, player.x_coord * 60 + 10, 600 - player.y_coord * 60 - 50, 40, 40)
+        // p5.image(sprite, props.current_room.x_coord * 60 + 10, 600 - props.current_room.y_coord * 60 - 50, 40, 40)
         // p5.image(sprite, 200, 200) // placeholder
     }
 
@@ -60,7 +61,9 @@ const mapStateToProps = state => {
         title: state.room_title,
         desc: state.room_desc,
         players: state.players,
-        error: state.error
+        error: state.error,
+        current_room: state.current_room,
+        rooms: state.rooms
     }
 }
 

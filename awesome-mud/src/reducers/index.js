@@ -1,14 +1,15 @@
 import{ PLAYER_INITIALIZED, ROOMS_INITIALIZED, ERROR_RECEIVED, MOVED_ROOM } from '../actions'
+import rooms from '../data/thunderball'
 
 const initialState = {
-    uuid: '',
-    name: '',
-    room_title: '',
-    room_desc: '',
+    uuid: 123456,
+    name: 'player',
+    room_title: rooms[0].title,
+    room_desc: rooms[0].description,
     players: [],
     error: '',
-    rooms: [],
-    current_room: {}
+    rooms: rooms,
+    current_room: rooms[0]
 }
 
 const reducer = (state = initialState, action) => {
@@ -26,7 +27,8 @@ const reducer = (state = initialState, action) => {
                 name: action.payload.name,
                 room_title: action.payload.title,
                 room_desc: action.payload.description,
-                players: action.payload.players
+                players: action.payload.players,
+                current_room: action.payload.current_room
             }
         case ROOMS_INITIALIZED:
             return {

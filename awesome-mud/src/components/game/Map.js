@@ -5,8 +5,8 @@ import Sketch from "react-p5"
 import styled from "styled-components"
 import Player from '../player/Player'
 import mani from "../assets/mani.png"
-import data from "../../data/dungeon"
-// import data from "../../data/thunderball"
+// import data from "../../data/dungeon"
+import data from "../../data/thunderball"
 
 
 function Map(props) {
@@ -42,8 +42,8 @@ function Map(props) {
                 p5.rect(room.x_coord * 60 + 30, 600 - room.y_coord * 60 - 45, 50, 30)
             }
         })
-        p5.image(sprite, player.x_coord * 60 + 10, 600 - player.y_coord * 60 - 50, 40, 40)
-        // p5.image(sprite, 200, 200)
+        // p5.image(sprite, player.x_coord * 60 + 10, 600 - player.y_coord * 60 - 50, 40, 40)
+        // p5.image(sprite, 200, 200) // placeholder
     }
 
     return (

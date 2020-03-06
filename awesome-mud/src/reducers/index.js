@@ -7,7 +7,8 @@ const initialState = {
     room_desc: '',
     players: [],
     error: '',
-    rooms: []
+    rooms: [],
+    current_room: {}
 }
 
 const reducer = (state = initialState, action) => {
@@ -33,12 +34,14 @@ const reducer = (state = initialState, action) => {
                 rooms: action.payload
             }
         case MOVED_ROOM:
+            console.log(action.payload)
             return {
                 ...state,
-                error: action.payload.error_msg,
+                // error: action.payload.error_msg,
                 room_title: action.payload.title,
                 room_desc: action.payload.description,
-                players: action.payload.players
+                // players: action.payload.players
+                current_room: action.payload 
             }
             
 

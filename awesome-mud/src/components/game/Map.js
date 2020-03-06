@@ -31,7 +31,7 @@ function Map(props) {
 
     let draw = p5 => {
         map.forEach(room => {
-            console.log('room coords:', room)
+            // console.log('room coords:', room)
 
             p5.square(room.x_coord * 60 + 15, 600 - room.y_coord * 60 - 45, 30)
 

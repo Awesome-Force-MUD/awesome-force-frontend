@@ -25,15 +25,13 @@ function Map(props) {
         p5.createCanvas(600, 600).parent(parentRef)
         p5.background(0, 0, 0, 0.5)
         p5.noStroke()
-        p5.fill(125, 195, 125)
     }
 
-    
-
     let draw = p5 => {
+        p5.fill(125, 195, 125)
         props.rooms.forEach(room => {
             // console.log('room coords:', room)
-
+            
             p5.square(room.x_coord * 60 + 15, 600 - room.y_coord * 60 - 45, 30)
 
             if (room.n_to) {
@@ -43,6 +41,9 @@ function Map(props) {
                 p5.rect(room.x_coord * 60 + 30, 600 - room.y_coord * 60 - 45, 50, 30)
             }
         })
+        p5.fill(200, 0, 0)
+        p5.square(props.current_room.x_coord * 60 + 15, 600 - props.current_room.y_coord * 60 - 45, 30)
+
         // p5.image(sprite, props.current_room.x_coord * 60 + 10, 600 - props.current_room.y_coord * 60 - 50, 40, 40)
         // p5.image(sprite, 200, 200) // placeholder
     }
